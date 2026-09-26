@@ -303,40 +303,123 @@ body {
   cursor: pointer;
 }
 
-/* Diamond Packages */
+/* ==========================================
+   DIAMOND PACKAGES ENHANCED STYLING
+========================================== */
 .diamond-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .package-card {
-  background-color: var(--bg-color);
+  background: linear-gradient(145deg, #0d1726, #09101d);
   border: 1px solid #1e2f47;
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 18px 10px 12px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.package-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 210, 255, 0.2);
 }
 
 .package-card.selected {
   border-color: var(--cyan);
-  box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
-  background-color: #0a182b;
+  background: linear-gradient(145deg, #0f233d, #0a182b);
+  box-shadow: 0 0 16px rgba(0, 210, 255, 0.4);
 }
 
-.diamond-icon { font-size: 24px; margin-bottom: 4px; }
-.package-name { font-size: 13px; font-weight: 600; }
-.package-price {
+.package-card.selected::before {
+  content: '✓';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--cyan);
+  color: #000;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-top-left-radius: 8px;
+}
+
+/* Badges styling */
+.pkg-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-bottom-right-radius: 10px;
+  color: #ffffff;
+}
+
+.pkg-badge.popular {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  box-shadow: 0 2px 6px rgba(255, 65, 108, 0.4);
+}
+
+.pkg-badge.promo {
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  color: #000;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(255, 210, 0, 0.3);
+}
+
+.pkg-badge.hot {
+  background: linear-gradient(90deg, #8a2387, #e94057);
+  box-shadow: 0 2px 6px rgba(233, 64, 87, 0.4);
+}
+
+.diamond-icon {
+  font-size: 26px;
   margin-top: 6px;
-  display: inline-block;
-  background-color: rgba(0, 210, 255, 0.15);
-  color: var(--cyan);
-  padding: 4px 12px;
-  border-radius: 6px;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 0 6px rgba(0, 210, 255, 0.6));
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.package-name {
   font-size: 13px;
   font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.old-price {
+  font-size: 11px;
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.package-price {
+  background-color: rgba(0, 210, 255, 0.15);
+  color: var(--cyan);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid rgba(0, 210, 255, 0.3);
 }
 
 /* Payment & Terms */
