@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T9Shop - ទំព័រដើម</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Header Bar -->
+    <header class="top-header">
+      <div class="brand-logo">
+        <span class="bolt-icon">⚡</span>
+        <span>T9<span class="shop-text">Shop</span></span>
+      </div>
+      <div class="status-badge">
+        <span class="green-dot"></span>
+        <span>សេវារហ័ស ២៤/៧</span>
+      </div>
+    </header>
+
+    <!-- Auto Slider Promo Banner -->
+    <div class="banner-slider-container">
+      <div class="banner-track" id="bannerTrack">
+        <div class="banner-slide">
+          <img class="promo-banner" src="GJ5bkBUETHGMxRvc9NuL.webp" alt="T9Shop Banner 1">
+        </div>
+        <div class="banner-slide">
+          <img class="promo-banner" src="if-anyone-wants-an-squad-v0-85q5skeq1wph1.webp" alt="T9Shop Banner 2">
+        </div>
+        <div class="banner-slide">
+          <img class="promo-banner" src="GJ5bkBUETHGMxRvc9NuL.webp" alt="T9Shop Banner 3">
+        </div>
+      </div>
+      <div class="slider-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-section">
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchInput" onkeyup="filterGames()" placeholder="ស្វែងរកឈ្មោះហ្គេមនៅទីនេះ...">
+      </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="category-title">
+      <span>🎮</span> ហ្គេមពេញនិយមបំផុត KH
+    </div>
+
+    <!-- Game Cards Grid -->
+    <div class="game-grid" id="gameGrid">
+      
+      <!-- Mobile Legends Card -->
+      <a href="mlbb.html" class="game-card" data-name="mobile legends mlbb">
+        <span class="card-badge hot">HOT</span>
+        <img src="MLBB-mobile-legends-bang-bang-icon.webp" alt="Mobile Legends">
+        <div class="game-title">Mobile Legends</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+      <!-- Magic Chess Card -->
+      <a href="Magic-Chess-Go-Go.html" class="game-card" data-name="magic chess">
+        <span class="card-badge new">NEW</span>
+        <img src="magic-chess-go-go-6909f94b8134a.png" alt="Magic Chess">
+        <div class="game-title">Magic Chess</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+      <!-- Free Fire Card -->
+      <a href="Free-Fire.html" class="game-card" data-name="free fire ff">
+        <span class="card-badge hot">HOT</span>
+        <img src="95752f3877a4fc46849e406d2f9cd0a9.jpg" alt="Free Fire">
+        <div class="game-title">Free Fire</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+      <!-- PUBG Mobile Card -->
+      <a href="PUBG-Mobile.html" class="game-card" data-name="pubg mobile">
+        <img src="f3958fd8814bbe41a967f6aaab3ec533396d9b39b9684cb003cdf75461889bdd_600.webp" alt="PUBG Mobile">
+        <div class="game-title">PUBG Mobile</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+      <!-- Blood Strike Card -->
+      <a href="Blood-Strike.html" class="game-card" data-name="blood strike">
+        <img src="OIP.webp" alt="Blood Strike">
+        <div class="game-title">Blood Strike</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+      <!-- Honor of Kings Card -->
+      <a href="Honor-of-Kings.html" class="game-card" data-name="honor of kings hok">
+        <img src="honorofkings-1674062354288.jpg" alt="Honor of Kings">
+        <div class="game-title">Honor of Kings</div>
+        <div class="btn-topup">បញ្ចូលឥឡូវ</div>
+      </a>
+
+    </div>
+
+    <!-- Toast Alert Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-title">
+        <span>💬</span> ទំនាក់ទំនង និងការគាំទ្រ
+      </div>
+      <div class="social-btn-group">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">Facebook Page</a>
+        <a href="https://t.me/SCProGame2" target="_blank" rel="noopener" class="social-btn">Telegram Chat</a>
+      </div>
+      <div class="copyright-text">
+        © ២០២៦ សាយប័រ ថបអាប់. រក្សាសិទ្ធិគ្រប់យ៉ាង។
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

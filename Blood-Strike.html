@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T9Shop - បញ្ចូលពេជ្រ Free Fire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="top-header">
+      <a href="index.html" class="brand-logo" style="text-decoration: none;">
+        <span class="bolt-icon">⚡</span>
+        <span>T9<span class="shop-text">Shop</span></span>
+      </a>
+      <div class="status-badge">
+        <span class="green-dot"></span>
+        <span>សេវារហ័ស ២៤/៧</span>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner-container">
+      <img class="promo-banner" src="if-anyone-wants-an-squad-v0-85q5skeq1wph1.webp" alt="Promo Banner">
+    </div>
+
+    <!-- Section 1: Inputs -->
+    <section class="section-card">
+      <div class="section-title">១. បញ្ចូលព័ត៌មាន Free Fire</div>
+      <div class="id-inputs-wrapper single-input">
+        <div class="input-box">
+          <label for="userId">Player ID (UID)</label>
+          <input type="number" id="userId" placeholder="បញ្ចូល Player ID របស់អ្នក">
+        </div>
+      </div>
+      
+      <div id="player-name-display" class="player-name-box"></div>
+
+      <button class="btn-check-id" onclick="checkPlayerName()">ពិនិត្យឈ្មោះ</button>
+    </section>
+
+    <!-- Section 2: Diamond Packages -->
+    <section class="section-card">
+      <div class="section-title">២. ជ្រើសរើសកញ្ចប់ពេជ្រ</div>
+      <div class="diamond-grid">
+        
+        <!-- 100 Diamonds Card -->
+        <div class="package-card selected" onclick="selectPackage(this, '100 Diamonds', '$1.00')">
+          <span class="pkg-badge promo">⚡ តម្លៃពិសេស</span>
+          <div class="diamond-icon">💎</div>
+          <div class="package-name">100 Diamonds</div>
+          <div class="price-wrapper">
+            <span class="old-price">$1.20</span>
+            <span class="package-price">$1.00</span>
+          </div>
+        </div>
+
+        <!-- 310 Diamonds Card -->
+        <div class="package-card" onclick="selectPackage(this, '310 Diamonds', '$3.00')">
+          <span class="pkg-badge popular">🔥 ពេញនិយម</span>
+          <div class="diamond-icon">💎</div>
+          <div class="package-name">310 Diamonds</div>
+          <div class="price-wrapper">
+            <span class="old-price">$3.50</span>
+            <span class="package-price">$3.00</span>
+          </div>
+        </div>
+
+        <!-- 520 Diamonds Card -->
+        <div class="package-card" onclick="selectPackage(this, '520 Diamonds', '$5.00')">
+          <span class="pkg-badge hot">🎁 ប្រូម៉ូសិន</span>
+          <div class="diamond-icon">💎</div>
+          <div class="package-name">520 Diamonds</div>
+          <div class="price-wrapper">
+            <span class="old-price">$5.80</span>
+            <span class="package-price">$5.00</span>
+          </div>
+        </div>
+
+        <!-- 1060 Diamonds Card -->
+        <div class="package-card" onclick="selectPackage(this, '1060 Diamonds', '$10.00')">
+          <span class="pkg-badge promo">⚡ តម្លៃពិសេស</span>
+          <div class="diamond-icon">💎</div>
+          <div class="package-name">1060 Diamonds</div>
+          <div class="price-wrapper">
+            <span class="old-price">$11.50</span>
+            <span class="package-price">$10.00</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Payment -->
+    <section class="section-card">
+      <div class="section-title">៣. វិធីសាស្ត្រទូទាត់ប្រាក់</div>
+      <div class="payment-badge-box">
+        <span class="khqr-tag">KHQR</span>
+        <div>
+          <div style="font-size: 13px; font-weight: 700;">ABA KHQR</div>
+          <div style="font-size: 11px; color: #94a3b8;">ស្កែនបង់ប្រាក់តាមកម្មវិធីធនាគារទាំងអស់</div>
+        </div>
+      </div>
+
+      <div class="terms-box">
+        <input type="checkbox" id="terms" checked>
+        <label for="terms">ខ្ញុំយល់ព្រមនឹងការបញ្ជាទិញ និងមិនអាចលុបចោលបានទេ</label>
+      </div>
+
+      <div class="warning-box">
+        ចំណាំ: នៅពេលធ្វើការបង់ប្រាក់ សូមប្រើប្រាស់ QR CODE ថ្មីសម្រាប់បង់ប្រាក់ ព្រោះ QR CODE ដែលបានប្រើរួច គឺគ្មានសុពលភាពនោះទេ។
+      </div>
+
+      <div class="order-summary">
+        <span id="selected-package-text">កញ្ចប់: 100 Diamonds</span>
+        <span class="summary-price" id="selected-price-text">$1.00</span>
+      </div>
+
+      <button class="btn-buy-now" onclick="processPayment()">ទិញឥឡូវនេះ</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-title">💬 ទំនាក់ទំនង និងការគាំទ្រ</div>
+      <div class="social-btn-group">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">Facebook Page</a>
+        <a href="https://t.me" target="_blank" rel="noopener" class="social-btn">Telegram Chat</a>
+      </div>
+      <div class="copyright-text">© ២០២៦ សាយប័រ ថបអាប់. រក្សាសិទ្ធិគ្រប់យ៉ាង។</div>
+    </footer>
+
+  </div>
+
+  <!-- Pop-up KHQR Modal -->
+  <div id="qr-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeQRModal()">&times;</span>
+      <div class="modal-header">
+        <span class="khqr-tag">KHQR</span>
+        <span style="font-size: 14px; font-weight: 700;">ទូទាត់ប្រាក់ប្រព័ន្ធ KHQR</span>
+      </div>
+      <div class="qr-code-body">
+        <img id="qr-image" src="GJ5bkBUETHGMxRvc9NuL.webp" alt="KHQR Code">
+        <div style="font-size: 12px; color: #94a3b8; margin-top: 8px;">សូមស្កែន QR Code នេះដើម្បីទូទាត់ប្រាក់</div>
+        <div class="payment-info">
+          <div>ឈ្មោះ: <strong id="modal-player-name">--</strong></div>
+          <div>កញ្ចប់: <strong id="modal-package-name">--</strong></div>
+          <div>តម្លៃត្រូវបង់: <strong id="modal-price" style="color: #00d2ff;">--</strong></div>
+        </div>
+      </div>
+      <button class="btn-done" onclick="closeQRModal()">បានទូទាត់រួចរាល់</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
